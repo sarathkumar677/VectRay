@@ -1,6 +1,29 @@
 apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'VectRay'
 
-android {
+    publishedGroupId = 'com.d-codepages.sarathkumar'
+    libraryName = 'VectRay'
+    artifact = 'VectRay'
+
+    libraryDescription = 'A complete library for managing Font Icon'
+
+    siteUrl = 'https://github.com/sarathkumar677/VectRay'
+    gitUrl = 'https://github.com/sarathkumar677/VectRay.git'
+
+    libraryVersion = '0.1'
+
+    developerId = 'sarathkumar677'
+    developerName = 'Sarath kumar'
+    developerEmail = 'sarathkumars677@gmail.com'
+
+    licenseName = 'GNU General Public License, version 3 (GPL-3.0)'
+    licenseUrl = 'http://opensource.org/licenses/gpl-3.0.html'
+    allLicenses = ["GPL-3.0"]
+}
+android
+        {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
@@ -8,8 +31,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode  1
+        versionName "0.1.2"
     }
     buildTypes {
         release {
@@ -19,6 +42,9 @@ android {
     }
 }
 
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
   }
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
