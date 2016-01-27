@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Vectray Example</string>
+    <string name="bpo">\ue800</string>
+    <string name="backup">&#xE864;</string>
+ </resources>
