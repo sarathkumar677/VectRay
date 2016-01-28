@@ -1,11 +1,13 @@
 package com.d_codepages.sarathkumar.vectray;
 
 
-import android.graphics.ColorFilter;
-
-
 import android.content.Context;
-import android.graphics.*;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.util.TypedValue;
@@ -37,10 +39,6 @@ public class IconDrawable extends Drawable {
 
     private int alpha = 255;
 
-    public IconDrawable(Context context, String iconKey) {
-
-        init(context, icon);
-    }
 
     /**
      * Create an IconDrawable.
@@ -64,10 +62,6 @@ public class IconDrawable extends Drawable {
         paint.setAntiAlias(true);
     }
 
-    public void setcolor(int color) {
-        this.icon.setColor(color);
-        invalidateSelf();
-    }
 
     /**
      * Set the size of this icon to the standard Android ActionBar.
@@ -119,6 +113,30 @@ public class IconDrawable extends Drawable {
      */
     public IconDrawable color(int color) {
         paint.setColor(color);
+        invalidateSelf();
+        return this;
+    }
+    /**
+     * Set the Shadow of the drawable.
+     *
+     * @param radius,  blur radius for shadow layer     *
+     * @param color,  Shadoe color     *
+     * @return The current IconDrawable for chaining.
+     */
+
+    public IconDrawable setShadow(float radius,float dx,float dy,int color) {
+        this.paint.setShadowLayer(radius, dx, dy, color);;
+        invalidateSelf();
+        return this;
+    }
+    /**
+     * Set the Shadow of the drawable.
+     *
+     * @param shader,  Shader object for paint object    *
+     * @return The current IconDrawable for chaining.
+     */
+    public IconDrawable setShader(Shader shader) {
+        this.paint.setShader(shader);
         invalidateSelf();
         return this;
     }
